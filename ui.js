@@ -2,7 +2,7 @@ import { fileOf, rankOf, squareName, FILES, sq } from './engine.js';
 
 const GLYPHS = {
   w: { k: '♔', q: '♕', r: '♖', b: '♗', n: '♘', p: '♙' },
-  b: { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' },
+  b: { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟︎' },
 };
 
 export function pieceGlyph(piece) {
