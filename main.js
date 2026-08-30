@@ -1,5 +1,5 @@
-import * as E from './engine.js';
-import * as UI from './ui.js';
+import * as E from './engine.js?v=4';
+import * as UI from './ui.js?v=4';
 
 const worker = new Worker(new URL('./ai-worker.js', import.meta.url), { type: 'module' });
 

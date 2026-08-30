@@ -270,6 +270,7 @@ button {
   position: relative;
   z-index: 2;
   line-height: 1;
+  font-family: "Apple Symbols", sans-serif;
   font-variant-emoji: text;
   transition: transform 0.12s ease;
 }
