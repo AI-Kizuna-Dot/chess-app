@@ -142,9 +142,16 @@ button {
 
 .button-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: flex-end;
+  flex: 1 1 100%;
+  gap: 6px;
+}
+
+.button-row .btn {
+  flex: 1 1 0;
+  padding: 9px 3px;
+  font-size: clamp(10px, 2.6vw, 14px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn {
@@ -263,6 +270,7 @@ button {
   position: relative;
   z-index: 2;
   line-height: 1;
+  font-variant-emoji: text;
   transition: transform 0.12s ease;
 }
 
