@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chess</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="toolbar">
+      <h1 class="app-title"><span class="app-title-icon" aria-hidden="true">♔</span><span>Chess</span></h1>
+      <div class="toolbar-controls">
+        <div class="field">
+          <label for="color-select">Play as</label>
+          <div class="segmented" id="color-select" role="tablist">
+            <button type="button" class="segmented-option is-selected" data-value="w">White</button>
+            <button type="button" class="segmented-option" data-value="b">Black</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="difficulty-select">Difficulty</label>
+          <div class="segmented" id="difficulty-select" role="tablist">
+            <button type="button" class="segmented-option" data-value="beginner">Beginner</button>
+            <button type="button" class="segmented-option" data-value="easy">Easy</button>
+            <button type="button" class="segmented-option is-selected" data-value="medium">Medium</button>
+            <button type="button" class="segmented-option" data-value="hard">Hard</button>
+            <button type="button" class="segmented-option" data-value="master">Master</button>
+          </div>
+        </div>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary" id="new-game-btn">New Game</button>
+          <button type="button" class="btn" id="undo-btn">Undo</button>
+          <button type="button" class="btn" id="flip-btn">Flip Board</button>
+          <button type="button" class="btn" id="threats-btn">Show Threats</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <div class="board-wrap">
+        <div class="board" id="board"></div>
+      </div>
+      <aside class="side-panel">
+        <div class="captured-row">
+          <div class="captured" id="captured-black"></div>
+          <div class="captured" id="captured-white"></div>
+        </div>
+        <div class="status-card" id="status"></div>
+        <div class="move-list-card">
+          <div class="move-list-header">
+            <h2 class="panel-heading">Moves</h2>
+            <div class="review-controls">
+              <button type="button" class="btn btn-small" id="back-btn" title="Previous move">‹</button>
+              <button type="button" class="btn btn-small" id="forward-btn" title="Next move">›</button>
+              <button type="button" class="btn btn-small" id="live-btn" title="Return to the current position">Live</button>
+            </div>
+          </div>
+          <ol class="move-list" id="move-list"></ol>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="promotion-modal">
+    <div class="modal sheet">
+      <h2 class="panel-heading">Promote pawn to</h2>
+      <div class="promotion-options" id="promotion-options">
+        <button type="button" class="promotion-option" data-piece="q">♕</button>
+        <button type="button" class="promotion-option" data-piece="r">♖</button>
+        <button type="button" class="promotion-option" data-piece="b">♗</button>
+        <button type="button" class="promotion-option" data-piece="n">♘</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="gameover-modal">
+    <div class="modal sheet">
+      <h2 class="panel-heading" id="gameover-title">Game Over</h2>
+      <p id="gameover-detail"></p>
+      <div class="modal-actions">
+        <button type="button" class="btn" id="gameover-review-btn">Review Game</button>
+        <button type="button" class="btn btn-primary" id="gameover-newgame-btn">New Game</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
